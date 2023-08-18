@@ -1,0 +1,15 @@
+<div class="router-content">
+  <br>
+  <br>
+  <br>
+    <h1 [ngClass]="{'green-text': color}">Tourist Attractions</h1>
+    <ul *ngFor="let city of cities">
+      <li [ngClass]="{'green-text': color}">
+        {{ city.name }}
+        <ul>
+          <li *ngFor="let attraction of city.touristAttractions">{{ attraction }}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,52 @@
+#navBar{
+    background:rgba(192,192,192,1);
+    position:fixed;
+    width:100%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    top:0%;
+    left: 0%; 
+    text-align:center;
+}
+
+a{
+    display:inline;
+    padding:10px;
+    color:black;
+}
+#Footer{
+    background:rgba(192,192,192,0.3);
+    position:fixed;
+    width:100%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    bottom:0%;
+    left: 0%; 
+    text-align:center;
+    color:black;
+}
+
+.tabs {
+    display: flex;
+    background-color: lightgray;
+    padding: 10px;
+  }
+  
+  .tabs a {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: white;
+  }
+  
+  .tabs a.active {
+    background-color: red;
+    color: white;
+  }
+  
+  .router-content {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid lightgray;
+  }
+  

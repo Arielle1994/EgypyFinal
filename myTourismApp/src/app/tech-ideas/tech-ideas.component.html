@@ -1,0 +1,67 @@
+<br />
+<br />
+<div class="container">
+<form name="techIdeasForm" [formGroup]="techIdeaForm">
+  <div id="uName">
+    <label for="userName">Name:</label>
+    <input type="text" id="userName" formControlName="name" />
+
+    <span *ngIf="name.dirty && name.errors?.['required']">
+      Please Type your name Here.
+    </span>
+
+    <span *ngIf="name.dirty && name.errors?.['minlength']">
+      Your name should be more than 2 letters.
+    </span>
+    <p *ngIf="name.errors?.['prohibited']">
+      Your name cannot contain the word "Tourist"
+    </p>
+  </div>
+  <br />
+  <div id="uEmail">
+    <label for="userEmail">Email:</label>
+    <input type="email" id="userEmail" formControlName="email" />
+    <span *ngIf="email.dirty && email.errors?.['required']">
+      Please Type your email here.
+    </span>
+
+    <span *ngIf="email.dirty && email.errors?.['email']">
+      Please use a valid email.
+    </span>
+  </div>
+  <br />
+  <div id="uAge">
+    <label for="userAge">Age:</label>
+    <input type="number" id="userAge" formControlName="age" />
+  </div>
+  <br />
+  <div id="taCity">
+    <label for="targetedCity">Target City:</label>
+    <select id="targetedCity" formControlName="city">
+      <option value="">--select--</option>
+      <option *ngFor="let city of CityNames" value="{{ city }}">
+        {{ city }}</option>
+    </select><br>
+   <p *ngIf="city.invalid && city.dirty"> Please choose a city</p>
+  </div>
+  <br />
+  <div>
+    <label for="brief">Brief about your techincal idea:</label> <br /><br />
+    <textarea
+      row="'4"
+      cols="50"
+      id="'brief"
+      formControlName="brief"
+    ></textarea>
+    <br>
+    <p *ngIf="brief.errors?.['minlength']">
+        Your message cannot be 99 characters
+    </p>
+    <p *ngIf="brief.errors?.['prohibited']">
+        Your project description cannot contain the word "nothing"
+    </p>
+  </div>
+
+  <button type="button" (click)="onSubmit()">Submit</button>
+</form>
+</div>

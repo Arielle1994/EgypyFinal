@@ -1,0 +1,37 @@
+<a [routerLink]="['/weather-details',name]"> </a>
+  <br>
+  <br>
+  <br>
+<div *ngIf="selectedCityWeather">
+    <table class="table table-bordered">
+      <caption>Weather in {{ name }}</caption>
+      <tr>
+        <th scope="col">Season</th>
+        <th scope="col">Morning</th>
+        <th scope="col">Night</th>
+      </tr>
+      <tr>
+        <th scope="row">Spring</th>
+        <td>{{ selectedCityWeather.springM }}°C</td>
+        <td>{{ selectedCityWeather.springN }}°C</td>
+      </tr>
+      <tr>
+        <th scope="row">Summer</th>
+        <td>{{ selectedCityWeather.summerM }}°C</td>
+        <td>{{ selectedCityWeather.summerN }}°C</td>
+      </tr>
+      <tr>
+        <th scope="row">Winter</th>
+        <td>{{ selectedCityWeather.winterM }}°C</td>
+        <td>{{ selectedCityWeather.winterN }}°C</td>
+      </tr>
+      <tr>
+        <th scope="row">Autumn</th>
+        <td>{{ selectedCityWeather.autumnM }}°C</td>
+        <td>{{ selectedCityWeather.autumnN }}°C</td>
+      </tr>
+    </table>
+   <div *ngIf="selectedCityWeather" appImportantText> 
+    <p>The most suitable time to enjoy your holiday in {{name}} would be between {{ selectedCityWeather.visitsFrom }} - {{ selectedCityWeather.visitsTo }}</p>
+  </div>
+  </div>

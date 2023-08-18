@@ -1,0 +1,11 @@
+<div class="router-content">
+  <br>
+  <br>
+  <br>
+  <ul>
+    <li *ngFor="let weather of citiesWeather"  class="styleCities">
+      <a [routerLink]="[weather.name]"> {{ weather.name }}</a>
+    </li>
+  </ul>
+</div>
+<!-- <app-weather-details [selectedCityWeather]="selectedWeather"></app-weather-details> -->
